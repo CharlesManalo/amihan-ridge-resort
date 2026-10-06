@@ -16,8 +16,9 @@
   // Keep the same navigation usable by mouse, keyboard, and touch.
   const nav = $('#site-nav'), toggle = $('.menu-toggle'), close = $('.menu-close');
   if (nav && toggle) {
-    const syncTextSize = () => document.body.classList.toggle('compact-navigation', parseFloat(getComputedStyle(document.documentElement).fontSize) > 20);
+    const syncTextSize = () => document.body.classList.toggle('compact-navigation', parseFloat(getComputedStyle(document.documentElement).fontSize) > 20 || (innerWidth >= 1024 && innerHeight < 540));
     syncTextSize();
+    window.addEventListener('resize', syncTextSize);
     if ('ResizeObserver' in window) new ResizeObserver(syncTextSize).observe(document.documentElement);
     const openMenu = () => {nav.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); document.body.classList.add('menu-open'); close.focus();};
     const closeMenu = (restore = true) => {nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); if(restore) toggle.focus();};
