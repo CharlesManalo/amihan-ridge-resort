@@ -156,3 +156,10 @@
  .highlands:not(.compact-navigation) .brand-mark{width:36px;height:36px}
  .highlands:not(.compact-navigation) .header-inner{gap:1rem}
 }
+
+/* Developer attribution */
+.footer-redesign .developer-credit{border-top:1px solid currentColor;padding:1.1rem 0 1.5rem;opacity:.85}
+.footer-redesign .developer-credit p{font-size:.8rem;margin:0;line-height:1.7}
+.footer-redesign .developer-credit strong{font-weight:600}
+.footer-redesign .developer-credit .developer-strand{display:block}
+.aurelia-footer .developer-credit{text-align:center}
